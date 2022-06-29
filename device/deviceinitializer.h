@@ -12,6 +12,9 @@ public:
     QString init(DeviceFacade* facade, QString devName, QString portName, QString dirName, QString scriptFileName);
     void deinit(DeviceFacade* facade);
 
+signals:
+    void deinitPortObject();
+
 private:
     void setupConnections(DeviceFacade* facade);
 };

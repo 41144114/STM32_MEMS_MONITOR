@@ -69,6 +69,12 @@ void DeviceInitializer::deinit(DeviceFacade* facade)
 {
     //Порн надо удалять отправляя сигнал, и дожидаясь, пока дело не сделано.
 
+    QEventLoop loop;
+    connect(this, &DeviceInitializer::deinitPortObject, facade->_pPort, &DevicePort::onDeinit);
+    connect(facade->_pPort, &DevicePort::showSucessfulDeinit, &loop, &QEventLoop::quit);
+    emit deinitPortObject();
+    loop.exec();
+
     facade->_pPortThread->terminate();
     facade->_pFileThread->terminate();
     facade->_pParseThread->terminate();

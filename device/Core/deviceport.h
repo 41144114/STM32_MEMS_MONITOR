@@ -16,12 +16,14 @@ public:
 public slots:
     void onWrite(QByteArray buffer);
     void onProcess();
+    void onDeinit();
 
 signals:
     void receivedFromPort(QByteArray message);
     void changedStatusExistingData(bool isData);
     void ready(int returnCode);
     void sendedToFile(QString data, FileType type);
+    void showSucessfulDeinit();
 
 private slots:
     void onReadyRead();

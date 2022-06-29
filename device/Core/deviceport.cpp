@@ -55,6 +55,17 @@ void DevicePort::onProcess()
     emit ready(0);
 }
 
+void DevicePort::onDeinit()
+{
+    _pDataExistingTimer->stop();
+    delete _pDataExistingTimer;
+
+    _pPort->close();
+    delete _pPort;
+
+    emit showSucessfulDeinit();
+}
+
 void DevicePort::onReadyRead()
 {
     _isDataExist = true;
