@@ -1,0 +1,13 @@
+IDI_ICON1 ICON "resources/control-panel.ico"
+
+#include "Defines/versioninfo.h"
+#include <windows.h>
+
+    VS_VERSION_INFO VERSIONINFO FILEVERSION VER_FILE_VERSION PRODUCTVERSION VER_FILE_VERSION
+
+        BEGIN BLOCK "StringFileInfo" BEGIN BLOCK "040904E4" BEGIN VALUE "CompanyName",
+    VER_COMPANYNAME_STR VALUE "FileDescription", VER_FILE_DESCRIPTION_STR VALUE "FileVersion",
+    VER_FILE_VERSION_STR VALUE "InternalName", VER_INTERNAL_NAME_STR VALUE "LegalCopyright",
+    VER_COPYRIGHT_STR VALUE "OriginalFilename", VER_ORIGINAL_FILENAME_STR VALUE "ProductName",
+    VER_PRODUCTNAME_STR VALUE "ProductVersion",
+    VER_FILE_VERSION_STR_INFO END END BLOCK "VarFileInfo" BEGIN VALUE "Translation", 0x409, 1200 END END
